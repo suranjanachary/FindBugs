@@ -1,0 +1,32 @@
+  removeMin() {
+    let min = this.findMinInList();
+    let curr = this.head;
+    if (curr.data === min) {
+      this.head = this.head.next;
+    } else {
+      let prev = null;
+      while (curr.data !== min) {
+        prev = curr;
+        curr = curr.next;
+      }
+      prev.next = curr.next;
+    }
+    return min;
+  }
+
+  removeMax() {
+    let max = this.findMaxInList();
+    let curr = this.head;
+    if (curr.data === max) {
+      this.head = this.head.next;
+    } else {
+      let prev = null;
+      while (curr.data !== max) {
+        prev = curr;
+        curr = curr.data;
+      }
+      prev.next = curr.next;
+    }
+    return max;
+  }
+}
